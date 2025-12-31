@@ -1,38 +1,223 @@
-.App {
-  text-align: center;
+body { font-family: Arial, sans-serif; background:#f7f7f7; }
+.container { max-width: 800px; margin: 24px auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.form input, .form textarea { width: 100%; padding: 8px; margin: 6px 0; box-sizing: border-box; }
+.form-actions { display:flex; gap:8px; }
+.list { display:flex; flex-direction:column; gap:12px; }
+.card { padding:12px; border:1px solid #eee; border-radius:6px; background:#fafafa; }
+.actions { margin-top:8px; display:flex; gap:8px; }
+button { padding:6px 10px; cursor:pointer; }
+.modal { position:fixed; inset:0; background: rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; }
+.modal-content { background:#fff; padding:16px; border-radius:8px; width:90%; max-width:600px; }
+
+
+/* Fade-in upward animation */
+.animate-card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes fadeInUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(30px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+/* Subtle hover animation */
+.hover-scale {
+  transition: all 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+body {
+  background-color: #f9fbff;
+}
+
+.navbar a.nav-link {
+  color: #333 !important;
+  transition: color 0.3s ease;
+}
+
+.navbar a.nav-link:hover {
+  color: #007bff !important;
+}
+
+.hero-section {
+  width: 100vw;
+  background: linear-gradient(90deg, #f9fbff 0%, #f0f7ff 100%);
+  overflow-x: hidden;
+}
+
+.text-section {
+  max-width: 600px;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.hero-image:hover {
+  transform: scale(1.07);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+.cta-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.hero-image {
+  width: 420px;               /* Increased from ~300–350px */
+  height: 420px;
+  object-fit: cover;
+  border-radius: 50%;         /* Perfect circle */
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hero-image:hover {
+  transform: scale(1.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-image {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+
+/* ==== Recipe Cards Layout ==== */
+.container-fluid {
+  padding: 40px 80px !important; /* space from corners */
+  background-color: #f8fafc; /* light background */
+}
+
+.animate-card {
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Equal size cards */
+.card {
+  height: 380px; /* fixed height */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease-in-out;
+  background-color: #ffffff;
+  border-radius: 18px;
+}
+
+/* Title styling */
+.card-title {
+  font-size: 1.3rem;
+  color: #198754; /* Bootstrap success color */
+}
+
+/* Text spacing inside cards */
+.card-body {
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Scale animation */
+.hover-scale:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Uniform row spacing */
+.row {
+  row-gap: 30px;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+  .container-fluid {
+    padding: 20px 30px !important;
+  }
+
+  .card {
+    height: auto;
+  }
+}
+
+
+/* === Delete Recipe Page Styling === */
+
+.delete-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.recipe-item {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px; /* reduced height */
+  transition: all 0.2s ease-in-out;
+}
+
+.recipe-item:hover {
+  background-color: #f8f9fa;
+  transform: scale(1.02);
+}
+
+.recipe-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #343a40;
+  margin: 0;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
 }

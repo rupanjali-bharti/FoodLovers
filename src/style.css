@@ -1,0 +1,10 @@
+body { font-family: Arial, sans-serif; background:#f7f7f7; }
+.container { max-width: 800px; margin: 24px auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+.form input, .form textarea { width: 100%; padding: 8px; margin: 6px 0; box-sizing: border-box; }
+.form-actions { display:flex; gap:8px; }
+.list { display:flex; flex-direction:column; gap:12px; }
+.card { padding:12px; border:1px solid #eee; border-radius:6px; background:#fafafa; }
+.actions { margin-top:8px; display:flex; gap:8px; }
+button { padding:6px 10px; cursor:pointer; }
+.modal { position:fixed; inset:0; background: rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; }
+.modal-content { background:#fff; padding:16px; border-radius:8px; width:90%; max-width:600px; }
