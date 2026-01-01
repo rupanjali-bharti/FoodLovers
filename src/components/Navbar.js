@@ -51,4 +51,9 @@ const Navbar = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Navbar;
+=======
+export default Navbar;
+make it responsibe even for mobile and tab view , keep all other things same
+>>>>>>> d4d6699ec24c69af022dfe0189eb9c37472b8ce4
