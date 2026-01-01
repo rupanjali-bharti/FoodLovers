@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  // State to track if the mobile menu is open or closed
   const [isOpen, setIsOpen] = useState(false);
 
-  // Function to toggle the menu
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -15,19 +13,15 @@ const Navbar = () => {
       <Link className="navbar-brand fw-bold fs-3 text-primary" to="/">
         Food<span className="text-success">Lovers</span>
       </Link>
-
-      {/* Toggle Button for Mobile */}
       <button
         className="navbar-toggler"
         type="button"
-        onClick={toggleMenu} // React Click Event
+        onClick={toggleMenu}
         aria-expanded={isOpen}
-        aria-label="Toggle navigation"
       >
         <span className="navbar-toggler-icon"></span>
       </button>
 
-      {/* Navbar Links - The "show" class is added conditionally based on state */}
       <div className={`collapse navbar-collapse justify-content-end ${isOpen ? 'show' : ''}`} id="navbarNav">
         <ul className="navbar-nav align-items-center">
           <li className="nav-item mx-2">
@@ -51,9 +45,4 @@ const Navbar = () => {
   );
 };
 
-<<<<<<< HEAD
 export default Navbar;
-=======
-export default Navbar;
-make it responsibe even for mobile and tab view , keep all other things same
->>>>>>> d4d6699ec24c69af022dfe0189eb9c37472b8ce4
